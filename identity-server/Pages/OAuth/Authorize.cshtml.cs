@@ -10,6 +10,7 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace identity_server.Pages;
 
+[IgnoreAntiforgeryToken(Order = 1001)]
 public class AuthorizeModel : PageModel
 {
     [BindProperty]
