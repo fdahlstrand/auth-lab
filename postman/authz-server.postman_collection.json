@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "e1c229d9-6f81-44f7-84cd-c89b939cc0c5",
+		"name": "authz-server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authorize Request",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7273/oauth2/authorize?response_type=token&client_id=postman&state=xyz&scope=add%3Asmall&redirect_uri=https%3A%2F%2Foauth.pstmn.io%2Fv1%2Fbrowser-callback",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7273",
+					"path": [
+						"oauth2",
+						"authorize"
+					],
+					"query": [
+						{
+							"key": "response_type",
+							"value": "token"
+						},
+						{
+							"key": "client_id",
+							"value": "postman"
+						},
+						{
+							"key": "state",
+							"value": "xyz"
+						},
+						{
+							"key": "scope",
+							"value": "add%3Asmall"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "https%3A%2F%2Foauth.pstmn.io%2Fv1%2Fbrowser-callback"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "scope",
+				"value": "add:small",
+				"type": "string"
+			},
+			{
+				"key": "clientId",
+				"value": "postman",
+				"type": "string"
+			},
+			{
+				"key": "authUrl",
+				"value": "https://localhost:7273/oauth2/authorize",
+				"type": "string"
+			},
+			{
+				"key": "redirect_uri",
+				"value": "https://oauth.pstmn.io/v1/browser-callback",
+				"type": "string"
+			},
+			{
+				"key": "tokenName",
+				"value": "Access Token",
+				"type": "string"
+			},
+			{
+				"key": "state",
+				"value": "xyz",
+				"type": "string"
+			},
+			{
+				"key": "grant_type",
+				"value": "implicit",
+				"type": "string"
+			},
+			{
+				"key": "client_authentication",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

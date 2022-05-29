@@ -1,0 +1,262 @@
+{
+	"info": {
+		"_postman_id": "bedbdc84-a9f8-4497-8a27-326198679e93",
+		"name": "identity-server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication Request",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{IdentityServerUrl}}/oauth/authorize?response_type=code&client_id=postman&state=xyz&scope=openid&redirect_uri=https%3A%2F%2Foauth.pstmn.io%2Fv1%2Fbrowser-callback",
+					"host": [
+						"{{IdentityServerUrl}}"
+					],
+					"path": [
+						"oauth",
+						"authorize"
+					],
+					"query": [
+						{
+							"key": "response_type",
+							"value": "code"
+						},
+						{
+							"key": "client_id",
+							"value": "postman"
+						},
+						{
+							"key": "state",
+							"value": "xyz"
+						},
+						{
+							"key": "scope",
+							"value": "openid"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "https%3A%2F%2Foauth.pstmn.io%2Fv1%2Fbrowser-callback"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Form Post",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Credential.Username",
+							"value": "joe",
+							"type": "text"
+						},
+						{
+							"key": "Credential.Password",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "__RequestVerificationToken",
+							"value": "CfDJ8OkJHZJ-DGVKrVpi0p7rf1MZo5yrzYGs_Eptit0VdYseuwVMjZ0aIf8sZUZADEllzTvzmiTS-JCxSivVCaLCMGZua2q1XiY7L54epDpvqqPYkUTLuL2ErydyRbSRru1sr05gaOL_RRRZTkKnjKnKPRg",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{IdentityServerUrl}}/oauth/authorize?response_type=code&client_id=postman&state=xyz&scope=openid&redirect_uri=https%3A%2F%2Foauth.pstmn.io%2Fv1%2Fbrowser-callback",
+					"host": [
+						"{{IdentityServerUrl}}"
+					],
+					"path": [
+						"oauth",
+						"authorize"
+					],
+					"query": [
+						{
+							"key": "response_type",
+							"value": "code"
+						},
+						{
+							"key": "client_id",
+							"value": "postman"
+						},
+						{
+							"key": "state",
+							"value": "xyz"
+						},
+						{
+							"key": "scope",
+							"value": "openid"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "https%3A%2F%2Foauth.pstmn.io%2Fv1%2Fbrowser-callback"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request Token",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "authorization_code",
+							"type": "default"
+						},
+						{
+							"key": "code",
+							"value": "qbtqH3uaU2yqTw3PHcAxyA",
+							"type": "default"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "https://oauth.pstmn.io/v1/browser-callback",
+							"type": "default"
+						},
+						{
+							"key": "client_id",
+							"value": "postman",
+							"type": "default"
+						},
+						{
+							"key": "client_secret",
+							"value": "verysecretstring",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{IdentityServerUrl}}/oauth/token",
+					"host": [
+						"{{IdentityServerUrl}}"
+					],
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "tokenName",
+				"value": "ID Token",
+				"type": "string"
+			},
+			{
+				"key": "accessTokenUrl",
+				"value": "https://localhost:7278/oauth/token",
+				"type": "string"
+			},
+			{
+				"key": "authUrl",
+				"value": "https://localhost:7278/oauth/authorize",
+				"type": "string"
+			},
+			{
+				"key": "redirect_uri",
+				"value": "https://oauth.pstmn.io/v1/browser-callback",
+				"type": "string"
+			},
+			{
+				"key": "client_authentication",
+				"value": "body",
+				"type": "string"
+			},
+			{
+				"key": "useBrowser",
+				"value": false,
+				"type": "boolean"
+			},
+			{
+				"key": "scope",
+				"value": "openid",
+				"type": "string"
+			},
+			{
+				"key": "clientSecret",
+				"value": "yadayada1234",
+				"type": "string"
+			},
+			{
+				"key": "clientId",
+				"value": "postman",
+				"type": "string"
+			},
+			{
+				"key": "grant_type",
+				"value": "authorization_code",
+				"type": "string"
+			},
+			{
+				"key": "state",
+				"value": "xyz",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

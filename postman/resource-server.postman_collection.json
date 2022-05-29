@@ -1,0 +1,34 @@
+{
+	"info": {
+		"_postman_id": "49640fe8-2b21-425c-80a3-869de6e45af4",
+		"name": "resource-server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Resource",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJ1c2VycyI6WyJsaXN0IiwiYWRkIl0sIm5iZiI6MTY1Mzg1OTU4OSwiZXhwIjoxNjUzODYzMTg5LCJpYXQiOjE2NTM4NTk1ODksImlzcyI6Imh0dHBzOi8vbG9jYWxob3N0OjcyNzMiLCJhdWQiOiI8bm90IGltcGxlbWVudGVkPiJ9.9OCE__7BH9wYAHjWlGI_hq4InCaw3J5iuzAb3T_uw6A",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:7286/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7286",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
